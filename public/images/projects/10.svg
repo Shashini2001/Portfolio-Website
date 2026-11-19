@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="Geist, Inter, Segoe UI, Arial, sans-serif">
+<defs><radialGradient id="g" cx="0.23" cy="0.20" r="0.65"><stop offset="0" stop-color="#fb8dff" stop-opacity="0.55"/><stop offset="0.45" stop-color="#5a2bff" stop-opacity="0.25"/><stop offset="1" stop-color="#0b080c" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="500" rx="18" fill="#14101a"/>
+<rect width="800" height="500" rx="18" fill="url(#g)"/>
+<rect x="1" y="1" width="798" height="498" rx="18" fill="none" stroke="#363636" stroke-width="2"/>
+<text x="56" y="216" font-size="58" font-weight="600" fill="#f4f0ff">A Walk Through</text><text x="56" y="284" font-size="58" font-weight="600" fill="#f4f0ff">the Forest</text>
+<text x="56" y="344" font-size="26" fill="#c2a4ff">Three.js / WebGL</text>
+</svg>

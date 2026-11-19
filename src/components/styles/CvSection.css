@@ -1,0 +1,100 @@
+.cv-section {
+  margin: auto;
+  padding: 60px 0 20px;
+}
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 70px 20px;
+  border-top: 1px solid #363636;
+  border-bottom: 1px solid #363636;
+  background: radial-gradient(
+    ellipse at 50% 120%,
+    rgba(168, 124, 255, 0.18),
+    transparent 60%
+  );
+}
+.cv-label {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accentColor);
+}
+.cv-title {
+  margin: 14px 0 0;
+  font-size: 60px;
+  font-weight: 400;
+}
+.cv-title span {
+  color: var(--accentColor);
+}
+.cv-text {
+  margin: 14px 0 38px;
+  font-size: 18px;
+  font-weight: 200;
+  color: #adacac;
+}
+.cv-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 34px 10px 10px;
+  border-radius: 100px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  background: #000;
+  border: 1px solid #363636;
+  box-shadow: 0 0 0 0 rgba(168, 124, 255, 0);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.cv-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #a87cff, #fb8dff);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cv-button > span {
+  position: relative;
+  z-index: 1;
+}
+.cv-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  font-size: 26px;
+  border-radius: 50%;
+  color: #0b080c;
+  background: linear-gradient(135deg, #c2a4ff, #fb8dff);
+  transition: transform 0.3s;
+}
+.cv-button:hover {
+  transform: translateY(-3px);
+  border-color: #a87cff;
+  box-shadow: 0 10px 40px 0 rgba(168, 124, 255, 0.45);
+  color: #fff;
+}
+.cv-button:hover::before {
+  opacity: 0.25;
+}
+.cv-button:hover .cv-button-icon {
+  transform: translateY(3px);
+}
+@media only screen and (max-width: 600px) {
+  .cv-title {
+    font-size: 38px;
+  }
+  .cv-container {
+    padding: 50px 20px;
+  }
+}

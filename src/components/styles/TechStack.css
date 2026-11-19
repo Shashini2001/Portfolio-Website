@@ -1,0 +1,25 @@
+/* Title on top, the 3D balls get all the free space under it,
+   so the balls can never touch the title. */
+.container-main .techstack {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.container-main .techstack h2 {
+  position: static;
+  flex: none;
+  margin: 0;
+  padding-top: 110px;
+  padding-bottom: 10px;
+}
+.container-main .techstack .tech-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+.container-main .techstack .tech-canvas {
+  position: absolute;
+  inset: 0;
+}
