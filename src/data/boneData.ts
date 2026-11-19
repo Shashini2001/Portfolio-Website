@@ -1,4 +1,4 @@
-export const typingBoneNames = [
+﻿export const typingBoneNames = [
   "thighL",
   "thighR",
   // "footL",

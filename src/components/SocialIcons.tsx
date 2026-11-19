@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub, FaLinkedinIn } from "react-icons/fa6";
+﻿import { FaEnvelope, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
 import { useEffect } from "react";
 

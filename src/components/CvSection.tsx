@@ -1,4 +1,4 @@
-import { MdFileDownload } from "react-icons/md";
+﻿import { MdFileDownload } from "react-icons/md";
 import "./styles/CvSection.css";
 
 // Put your CV in the `public` folder with exactly this name.
