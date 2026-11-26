@@ -12,7 +12,10 @@ An interactive 3D portfolio website for **Shashini Ruwanthika**, an AI / ML Engi
 - **Smooth scrolling** - GSAP ScrollSmoother with scroll-driven animations.
 - **3D PC loading screen** - a CSS 3D computer shows the loading progress, then the camera zooms into the screen.
 - **Horizontal "My Work" section** - 10 projects, each with a short description, tools and a GitHub link.
-- **3D tech stack** - a neat grid of 20 glossy balls (Python, Java, Kotlin, C++, Go, TensorFlow, Docker and more) that bounce into place and move away from the mouse.
+- **3D tech stack** - a neat grid of 21 glossy balls (Python, Java, Kotlin, C++, Go, Ballerina, TensorFlow, Docker and more) that bounce into place and move away from the mouse.
+- **Skills section** - category tabs (AI / ML, Languages, Frameworks & Tools, Networking & Security, Databases & Deployment), a search box and an icon grid.
+- **Certificates & Activities** - tabbed cards taken from the CV.
+- **Open to internships** badge in the Contact and CV sections.
 - **Download my CV** button and a **Contact** section.
 - Responsive layout: the full 3D experience on desktop, a lighter layout on small screens.
 
@@ -77,6 +80,8 @@ Portfolio-Website/
 │   │   ├── About.tsx
 │   │   ├── WhatIDo.tsx          # AI / ML and DEVELOP boxes
 │   │   ├── Career.tsx           # education and journey
+│   │   ├── Skills.tsx           # skill categories + icon grid
+│   │   ├── Learning.tsx         # certificates and activities
 │   │   ├── Work.tsx             # horizontal project section
 │   │   ├── TechStack.tsx        # 3D ball grid
 │   │   ├── CvSection.tsx        # Download my CV button
@@ -95,6 +100,8 @@ Portfolio-Website/
 | Name and title on the first screen | `src/components/Landing.tsx` |
 | About text | `src/components/About.tsx` |
 | Skills boxes | `src/components/WhatIDo.tsx` |
+| Skills grid (categories, icons) | `src/components/Skills.tsx` |
+| Certificates and activities | `src/components/Learning.tsx` |
 | Education / journey | `src/components/Career.tsx` |
 | Projects, descriptions and links | the `projects` list at the top of `src/components/Work.tsx` |
 | Project thumbnails | `public/images/projects/` |

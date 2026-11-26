@@ -6,6 +6,10 @@ const Contact = () => {
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
         <h3>Contact</h3>
+        <p className="open-badge">
+          <span className="open-dot" /> Open to internships. I'm currently seeking an
+          AI / ML or software development internship.
+        </p>
         <div className="contact-flex">
           <div className="contact-box">
             <h4>Email</h4>

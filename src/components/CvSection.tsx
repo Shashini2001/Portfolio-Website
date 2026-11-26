@@ -15,6 +15,9 @@ const CvSection = () => {
         <p className="cv-text">
           Education, skills and projects in one page.
         </p>
+        <p className="cv-open">
+          <span className="cv-open-dot" /> Open to internships
+        </p>
         <a
           className="cv-button"
           href={CV_FILE}

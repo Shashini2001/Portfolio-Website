@@ -4,14 +4,14 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import "./styles/TechStack.css";
 
-// 20 technologies, shown as a neat grid of 3D balls.
-// Rows: languages + web / AI + backend / data + tools + 3D.
+// 21 technologies, shown as a neat grid of 3D balls (7 + 7 + 7).
 const techs: { label: string; bg: string; fg: string }[] = [
   { label: "Python", bg: "#3776ab", fg: "#ffd43b" },
   { label: "Java", bg: "#e76f00", fg: "#ffffff" },
   { label: "Kotlin", bg: "#7f52ff", fg: "#ffffff" },
   { label: "C++", bg: "#00599c", fg: "#ffffff" },
   { label: "Go", bg: "#00add8", fg: "#ffffff" },
+  { label: "Ballerina", bg: "#1f8a6b", fg: "#ffffff" },
   { label: "JavaScript", bg: "#f7df1e", fg: "#222222" },
   { label: "React", bg: "#20232a", fg: "#61dafb" },
   { label: "TensorFlow", bg: "#ff6f00", fg: "#ffffff" },
