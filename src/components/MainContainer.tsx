@@ -1,89 +1,65 @@
-﻿import { useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HoverLinks from "./HoverLinks";
-import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import "./styles/Navbar.css";
+﻿import { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
+import About from "./About";
+import Career from "./Career";
+import Contact from "./Contact";
+import CvSection from "./CvSection";
+import Cursor from "./Cursor";
+import Landing from "./Landing";
+import Learning from "./Learning";
+import Navbar from "./Navbar";
+import Skills from "./Skills";
+import SocialIcons from "./SocialIcons";
+import WhatIDo from "./WhatIDo";
+import Work from "./Work";
+import setSplitText from "./utils/splitText";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+const TechStack = lazy(() => import("./TechStack"));
 
-const Navbar = () => {
+const MainContainer = ({ children }: PropsWithChildren) => {
+  const [isDesktopView, setIsDesktopView] = useState<boolean>(
+    window.innerWidth > 1024
+  );
+
   useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
-
-    smoother.scrollTop(0);
-    smoother.paused(true);
-
-    const links = document.querySelectorAll(".header ul a");
-    const onLinkClick = (e: Event) => {
-      if (window.innerWidth > 1024) {
-        e.preventDefault();
-        const elem = e.currentTarget as HTMLAnchorElement;
-        const section = elem.getAttribute("data-href");
-        smoother.scrollTo(section, true, "top top");
-      }
+    const resizeHandler = () => {
+      setSplitText();
+      setIsDesktopView(window.innerWidth > 1024);
     };
-    links.forEach((elem) => elem.addEventListener("click", onLinkClick));
-    const onResize = () => ScrollSmoother.refresh(true);
-    window.addEventListener("resize", onResize);
-
+    resizeHandler();
+    window.addEventListener("resize", resizeHandler);
     return () => {
-      links.forEach((elem) => elem.removeEventListener("click", onLinkClick));
-      window.removeEventListener("resize", onResize);
-      smoother.kill();
+      window.removeEventListener("resize", resizeHandler);
     };
-  }, []);
-  return (
-    <>
-      <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          Shashini
-        </a>
-        <a
-          href="mailto:shashiniruwanthika607@gmail.com"
-          className="navbar-connect"
-          data-cursor="disable"
-        >
-          shashiniruwanthika607@gmail.com
-        </a>
-        <ul>
-          <li>
-            <a data-href="#about" href="#about">
-              <HoverLinks text="ABOUT" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#skills" href="#skills">
-              <HoverLinks text="SKILLS" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#work" href="#work">
-              <HoverLinks text="WORK" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#contact" href="#contact">
-              <HoverLinks text="CONTACT" />
-            </a>
-          </li>
-        </ul>
-      </div>
+  }, [isDesktopView]);
 
-      <div className="landing-circle1"></div>
-      <div className="landing-circle2"></div>
-      <div className="nav-fade"></div>
-    </>
+  return (
+    <div className="container-main">
+      <Cursor />
+      <Navbar />
+      <SocialIcons />
+      {isDesktopView && children}
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <div className="container-main">
+            <Landing>{!isDesktopView && children}</Landing>
+            <About />
+            <WhatIDo />
+            <Skills />
+            <Career />
+            <Work />
+            <Learning />
+            {isDesktopView && (
+              <Suspense fallback={<div>Loading....</div>}>
+                <TechStack />
+              </Suspense>
+            )}
+            <CvSection />
+            <Contact />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default Navbar;
+export default MainContainer;
