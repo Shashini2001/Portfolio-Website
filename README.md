@@ -1,8 +1,10 @@
 # Shashini Ruwanthika | 3D Portfolio
 
+
+
 An interactive 3D portfolio website for **Shashini Ruwanthika**, an AI / ML Engineer, IT undergraduate and software developer. It shows my projects, skills and education in a smooth-scrolling page with a 3D character sitting at a desk.
 
-> Live demo: _add your link here after deploying_
+> Live demo: https://portfolio-website-pi-silk.vercel.app/
 
 ---
 
